@@ -1,6 +1,7 @@
 package router
 
 import (
+	"Structure/src/system/db"
 	jwt "Structure/src/system/middleware"
 	"fmt"
 	"net/http"
@@ -8,6 +9,7 @@ import (
 	"strings"
 )
 
+var DB = db.Connect()
 var USER_ID int
 
 // Check if current request is authenticated

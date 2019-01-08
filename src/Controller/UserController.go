@@ -4,13 +4,40 @@ import (
 	model "Structure/src/Model"
 	"encoding/json"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
-func UsersData(w http.ResponseWriter, r *http.Request) {
+func Index(w http.ResponseWriter, r *http.Request) {
 
 	var users []model.Users
 	DB.Table("users").Scan(&users)
 	json.NewEncoder(w).Encode(users)
+}
+
+func ChangeUserApproveStatus(w http.ResponseWriter, r *http.Request) {
+
+	id := mux.Vars(r)["id"]
+	var data map[string]string
+	json.NewDecoder(r.Body).Decode(&data)
+
+	DB.Table("users").Where("id = ?", id).Update("approved", data["approved"])
+
+	var response = make(map[string]string, 0)
+	response["status"] = "success"
+	json.NewEncoder(w).Encode(response)
+}
+
+func Delete(w http.ResponseWriter, r *http.Request) {
+
+	id := mux.Vars(r)["id"]
+	var users []model.Users
+
+	DB.Table("users").Where("id = ?", id).Delete(&users)
+
+	var response = make(map[string]string, 0)
+	response["status"] = "success"
+	json.NewEncoder(w).Encode(response)
 }
 
 func UserPermissions(w http.ResponseWriter, r *http.Request) {

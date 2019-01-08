@@ -7,6 +7,8 @@ import (
 )
 
 func Routes(r *mux.Router) {
+	AuthRoutes(r)
+	UsersRoutes(r)
 	WebRoutes(r)
 
 	fs := http.FileServer(http.Dir("./static/"))
