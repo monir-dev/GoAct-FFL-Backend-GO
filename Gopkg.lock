@@ -18,28 +18,12 @@
   version = "v1.4.1"
 
 [[projects]]
-  digest = "1:436e8c1845d92384995e9c93470f639b886dbbc4b49c7babf544f9cc06361198"
-  name = "github.com/go-xorm/builder"
-  packages = ["."]
+  digest = "1:a63cff6b5d8b95638bfe300385d93b2a6d9d687734b863da8e09dc834510a690"
+  name = "github.com/google/go-querystring"
+  packages = ["query"]
   pruneopts = "UT"
-  revision = "03eb88feccce3e477c318ce7f6f1b386544ab20b"
-  version = "v0.3.3"
-
-[[projects]]
-  digest = "1:ec14b8c3b10e27599d7053a97bd28ef36e59cc4247f83b474bca43aaa971eab9"
-  name = "github.com/go-xorm/core"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c10e21e7e1cec20e09398f2dfae385e58c8df555"
-  version = "v0.6.0"
-
-[[projects]]
-  digest = "1:4f01359acf1d4bc0aade06dcfca6f7687516f54fbf70b467fe90057c614647f5"
-  name = "github.com/go-xorm/xorm"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "1f39c590c64924f358c0d89016ac9b2bb84e9125"
-  version = "v0.7.1"
+  revision = "44c6ddd0a2342c386950e880b658017258da92fc"
+  version = "v1.0.0"
 
 [[projects]]
   digest = "1:c79fb010be38a59d657c48c6ba1d003a8aa651fa56b579d959d74573b7dff8e1"
@@ -95,7 +79,7 @@
   input-imports = [
     "github.com/dgrijalva/jwt-go",
     "github.com/go-sql-driver/mysql",
-    "github.com/go-xorm/xorm",
+    "github.com/google/go-querystring/query",
     "github.com/gorilla/mux",
     "github.com/jinzhu/gorm",
     "github.com/joho/godotenv",
