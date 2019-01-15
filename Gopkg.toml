@@ -39,10 +39,6 @@
   version = "1.4.1"
 
 [[constraint]]
-  name = "github.com/go-xorm/xorm"
-  version = "0.7.1"
-
-[[constraint]]
   name = "github.com/gorilla/mux"
   version = "1.6.2"
 
@@ -55,5 +51,5 @@
   version = "1.9.2"
 
 [[constraint]]
-  name = "github.com/google/go-querystring"
-  version = "1.0.0"
+  branch = "master"
+  name = "golang.org/x/crypto"

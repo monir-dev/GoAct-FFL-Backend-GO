@@ -1,9 +1,10 @@
 package router
 
 import (
-	"Structure/src/system/db"
-	jwt "Structure/src/system/middleware"
+	"Structure/src/config/db"
+	jwt "Structure/src/middleware"
 	"fmt"
+	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -12,7 +13,6 @@ import (
 var DB = db.Connect()
 var USER_ID int
 
-// Check if current request is authenticated
 func IsAuthenticated(endpoint func(http.ResponseWriter, *http.Request)) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
@@ -37,7 +37,14 @@ func IsAuthenticated(endpoint func(http.ResponseWriter, *http.Request)) http.Han
 	})
 }
 
-// Error check
+func CommonMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Content-Type", "application/json; charset=UTF-8")
+		log.Println("Request URI : ", r.RequestURI)
+		next.ServeHTTP(w, r)
+	})
+}
+
 func checkErr(err error) {
 	if err != nil {
 		panic(err)

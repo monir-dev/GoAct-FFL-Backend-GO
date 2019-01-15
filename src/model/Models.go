@@ -1,17 +1,17 @@
-package Model
+package model
 
 type User struct {
-	ID        int `json:"id"`
-	Name      string
-	Email     string
-	Password  string
-	CreatedAt string
-	UpdatedAt string
+	ID        int       `json:"id"`
+	Name      string    `json:"name"`
+	Email     string    `json:"email"`
+	Password  string    `json:"password"`
+	CreatedAt string 	`json:"created_at"`
+	UpdatedAt string 	`json:"updated_at"`
 }
 
-func (User) TableName() string {
-	return "user"
-}
+// func (User) TableName() string {
+// 	return "users"
+// }
 
 type Users struct {
 	ID            int `json:"id"`
@@ -37,17 +37,17 @@ type Users struct {
 }
 
 func (Users) TableName() string {
-	return "users"
+	return "user_not_using"
 }
 
 type Role struct {
-	ID          int `json:"id"`
-	Name        string
-	DisplayName string
-	Description string
-	CreatedBy   int
-	CreatedAt   string
-	UpdatedAt   string
+	ID          int    `json:"id"`
+	Name        string `json:"name"`
+	DisplayName string `json:"display_name"`
+	Description string `json:"description"`
+	CreatedAt   string `json:"created_at"`
+	UpdatedAt   string `json:"updated_at"`
+	DeletedAt   string `json:"deleted_at"`
 }
 
 type Permission struct {

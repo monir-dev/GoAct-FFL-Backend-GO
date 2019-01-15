@@ -5,3 +5,9 @@ dep ensure -add github.com/go-xorm/xorm
 dep ensure -add github.com/gorilla/mux
 dep ensure -add github.com/jinzhu/gorm
 dep ensure -add github.com/google/go-querystring/query
+dep ensure -add golang.org/x/crypto/bcrypt
+
+
+usefull resources:
+------------------
+https://hackernoon.com/how-to-store-passwords-example-in-go-62712b1d2212

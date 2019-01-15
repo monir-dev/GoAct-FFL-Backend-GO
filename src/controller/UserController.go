@@ -1,7 +1,7 @@
 package controller
 
 import (
-	model "Structure/src/Model"
+	model "Structure/src/model"
 	"encoding/json"
 	"net/http"
 	"strings"
@@ -125,8 +125,14 @@ func UserPermissions(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(results)
 }
 
-func checkErr(err error) {
-	if err != nil {
-		panic(err)
-	}
+func TestUser(w http.ResponseWriter, r *http.Request) {
+
+	var res map[string]interface{}
+
+	json.NewDecoder(r.Body).Decode(&res)
+
+	displayname := res["record"].(map[string]interface{})["displayname"].(string)
+	w.Write([]byte(displayname))
+	json.NewEncoder(w).Encode(res)
+
 }

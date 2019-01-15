@@ -6,7 +6,6 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
-	// "github.com/go-xorm/xorm"
 )
 
 // func ConnectXorm(host string, port string, database string, user string, pass string, options string) (db *xorm.Engine, err error) {

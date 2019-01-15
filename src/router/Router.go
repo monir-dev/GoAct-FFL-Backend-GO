@@ -7,8 +7,17 @@ import (
 )
 
 func Routes(r *mux.Router) {
+
+	// Middleware applicable for all request
+	r.Use(CommonMiddleware)
+
+	// Structure/src/router/AuthRoutes.go
 	AuthRoutes(r)
+
+	// Structure/src/router/UsersRoutes.go
 	UsersRoutes(r)
+
+	// Structure/src/router/WebRoutes.go
 	WebRoutes(r)
 
 	fs := http.FileServer(http.Dir("./static/"))
