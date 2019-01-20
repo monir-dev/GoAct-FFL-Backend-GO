@@ -1,36 +1,43 @@
 package controller
 
 import (
-	model "Structure/src/model"
+	"Structure/src/model"
 	"encoding/json"
 	"net/http"
+	"time"
 
 	"github.com/gorilla/mux"
 )
 
 func GetRoles(w http.ResponseWriter, r *http.Request) {
 
-	var roles []map[string]interface{}
+	//var roles []map[string]interface{}
+	//
+	//var id, created_by int
+	//var name, display_name, description string
+	//
+	//rows, err := DB.Table("roles").Select("id, name, display_name, description, created_by").Rows()
+	//defer rows.Close()
+	//if err != nil {
+	//	panic(err)
+	//}
+	//for rows.Next() {
+	//	rows.Scan(&id, &name, &display_name, &description, &created_by)
+	//
+	//	role := map[string]interface{}{
+	//		"id":           id,
+	//		"name":         name,
+	//		"display_name": display_name,
+	//		"description":  description,
+	//		"created_by":   created_by,
+	//	}
+	//
+	//	roles = append(roles, role)
+	//}
 
-	var id, created_by int
-	var name, display_name, description string
+	var roles []model.Role
+	DB.Table("roles").Scan(&roles)
 
-	rows, err := DB.Table("roles").Select("id, name, display_name, description, created_by").Rows()
-	defer rows.Close()
-	checkErr(err)
-	for rows.Next() {
-		rows.Scan(&id, &name, &display_name, &description, &created_by)
-
-		role := map[string]interface{}{
-			"id":           id,
-			"name":         name,
-			"display_name": display_name,
-			"description":  description,
-			"created_by":   created_by,
-		}
-
-		roles = append(roles, role)
-	}
 	json.NewEncoder(w).Encode(roles)
 }
 
@@ -38,14 +45,14 @@ func AddRole(w http.ResponseWriter, r *http.Request) {
 	var role model.Role
 	json.NewDecoder(r.Body).Decode(&role)
 
+	now := time.Now().Format("2006-01-02 15:04:05")
+
+	role.CreatedAt = now
+	role.UpdatedAt = now
+
 	DB.Create(&role)
 
-	var response = make(map[string]interface{})
-	// add role to response to response
-	response["status"] = "success"
-	response["body"] = role
-
-	json.NewEncoder(w).Encode(response)
+	SendSuccessResponse(w, role)
 }
 
 func EditRole(w http.ResponseWriter, r *http.Request) {

@@ -2,6 +2,7 @@ package model
 
 type User struct {
 	ID        int       `json:"id"`
+	RoleId	  int	    `json:"role_id"`
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
 	Password  string    `json:"password"`
@@ -13,48 +14,17 @@ type User struct {
 // 	return "users"
 // }
 
-type Users struct {
-	ID            int `json:"id"`
-	Name          string
-	Email         string
-	StaffId       string
-	Displayname   string
-	Desg          string
-	ServiceGroup  string
-	Company       string
-	Dept          string
-	Country       string
-	Location      string
-	UserType      string
-	ParentId      int `gorm:"column:parent_id"`
-	CompanyId     int `gorm:"column:company_id"`
-	depertmentId  int `gorm:"column:depertment_id"`
-	Password      string
-	Approved      string
-	RememberToken string
-	CreatedAt     string
-	UpdatedAt     string
-}
-
-func (Users) TableName() string {
-	return "user_not_using"
-}
-
 type Role struct {
 	ID          int    `json:"id"`
 	Name        string `json:"name"`
 	DisplayName string `json:"display_name"`
-	Description string `json:"description"`
 	CreatedAt   string `json:"created_at"`
 	UpdatedAt   string `json:"updated_at"`
-	DeletedAt   string `json:"deleted_at"`
 }
 
 type Permission struct {
 	ID          int `json:"id"`
 	Name        string
-	DisplayName string
-	Description string
 	CreatedBy   int
 	CreatedAt   string
 	UpdatedAt   string

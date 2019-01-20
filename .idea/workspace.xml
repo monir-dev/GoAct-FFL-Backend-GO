@@ -2,27 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bc37c36-3408-4968-bba3-9a749420448e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/server/server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/AuthController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/AuthRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gopkg.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Gopkg.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Models.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Models.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/app/app.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/db/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/db/db.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/middleware/AuthMiddleware.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/JWT.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/router/auth.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/router/router_global.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Helper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/router/users.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/UsersRoutes.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/system/router/web.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/WebRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/RoleController.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/RoleController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Helper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Models.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Models.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/AuthRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/AuthRoutes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/Helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Helper.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/Router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/Router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/UsersRoutes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/UsersRoutes.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/AuthRoutes.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="380">
+              <caret line="17" column="100" selection-start-line="17" selection-start-column="100" selection-end-line="17" selection-end-column="100" />
               <folding>
                 <element signature="e#16#115#0" expanded="true" />
               </folding>
@@ -56,33 +44,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/AuthController.go">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controller/UserController.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="178" column="55" lean-forward="true" selection-start-line="178" selection-start-column="55" selection-end-line="178" selection-end-column="55" />
+            <state relative-caret-position="386">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
               <folding>
-                <element signature="e#20#171#0" expanded="true" />
-                <element signature="n#!!block;n#Login#0" />
-                <element signature="n#!!block;n#Register#0" />
-                <element signature="n#!!block;n#GetAllUser#0" />
-                <element signature="n#!!block;n#UpdateAuthUser#0" />
+                <element signature="e#20#114#0" expanded="true" />
+                <element signature="n#!!block;n#Store#0" />
+                <element signature="n#!!block;n#ChangeUserApproveStatus#0" />
+                <element signature="e#2524#2529#0" />
+                <element signature="n#!!block;n#Delete#0" />
+                <element signature="n#!!block;n#UserPermissions#0" />
+                <element signature="n#!!block;n#TestUser#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controller/UserController.go">
+        <entry file="file://$PROJECT_DIR$/src/controller/Helper.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="99" column="39" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="99" selection-end-column="39" />
+            <state relative-caret-position="596">
+              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
               <folding>
-                <element signature="e#20#134#0" expanded="true" />
-                <element signature="n#!!block;n#Index#0" />
-                <element signature="n#!!block;n#Store#0" />
-                <element signature="n#!!block;n#ChangeUserApproveStatus#0" />
-                <element signature="n#!!block;n#TestUser#0" />
+                <element signature="n#!!block;n#SendErrorResponse#0" />
+                <element signature="n#!!block;n#Testing#0" />
+                <element signature="n#!!block;n#IfThenElse#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controller/RoleController.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="64" column="27" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="27" />
+              <folding>
+                <element signature="n#!!block;n#GetRoles#0" />
+                <element signature="n#!!block;n#AddRole#0" />
+                <element signature="n#!!block;n#DeleteRole#0" />
               </folding>
             </state>
           </provider>
@@ -91,17 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/model/Models.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="552">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/router/Router.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="353">
+              <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
               <folding>
                 <element signature="e#16#65#0" expanded="true" />
               </folding>
@@ -147,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/config/db.go" />
         <option value="$PROJECT_DIR$/src/config/app.go" />
         <option value="$PROJECT_DIR$/src/router/router_global.go" />
-        <option value="$PROJECT_DIR$/src/controller/UserController.go" />
         <option value="$PROJECT_DIR$/src/controller/init.go" />
         <option value="$PROJECT_DIR$/src/router/init.go" />
         <option value="$PROJECT_DIR$/src/config/server.go" />
@@ -155,11 +156,17 @@
         <option value="$PROJECT_DIR$/server.go" />
         <option value="$PROJECT_DIR$/src/config/server/server.go" />
         <option value="$PROJECT_DIR$/main.go" />
-        <option value="$PROJECT_DIR$/src/model/Models.go" />
         <option value="$PROJECT_DIR$/src/controller/AuthController.go" />
         <option value="$PROJECT_DIR$/src/router/auth.go" />
         <option value="$PROJECT_DIR$/src/router/router.go" />
+        <option value="$PROJECT_DIR$/src/router/UsersRoutes.go" />
         <option value="$PROJECT_DIR$/src/router/Router.go" />
+        <option value="$PROJECT_DIR$/src/controller/RoleController.go" />
+        <option value="$PROJECT_DIR$/src/model/Models.go" />
+        <option value="$PROJECT_DIR$/src/router/Helper.go" />
+        <option value="$PROJECT_DIR$/src/controller/Helper.go" />
+        <option value="$PROJECT_DIR$/src/router/AuthRoutes.go" />
+        <option value="$PROJECT_DIR$/src/controller/UserController.go" />
       </list>
     </option>
   </component>
@@ -188,7 +195,7 @@
               <item name="Structure" type="b2602c69:ProjectViewProjectNode" />
               <item name="Structure" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Structure" type="b2602c69:ProjectViewProjectNode" />
@@ -271,7 +278,7 @@
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" weight="0.32970297" />
-      <window_info anchor="bottom" id="Terminal" weight="0.26342452" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.26849037" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32928064" />
@@ -330,15 +337,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/UsersRoutes.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#16#92#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/router/WebRoutes.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -351,20 +349,6 @@
     <entry file="file://$PROJECT_DIR$/src/controller/__.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/RoleController.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding>
-            <element signature="e#20#115#0" expanded="true" />
-            <element signature="n#!!block;n#GetRoles#0" />
-            <element signature="n#!!block;n#AddRole#0" />
-            <element signature="n#!!block;n#EditRole#0" />
-            <element signature="n#!!block;n#DeleteRole#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/middleware/JWT.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
@@ -374,20 +358,6 @@
             <element signature="n#!!block;n#CreateJwtToken#0" />
             <element signature="n#!!block;n#PurseToken#0" />
             <element signature="n#!!block;n#getJwtTokenSecretKey#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/init.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
-          <folding>
-            <element signature="e#20#86#0" expanded="true" />
-            <element signature="n#!!block;n#checkErr#0" />
-            <element signature="n#!!block;n#SendErrorResponse#0" />
-            <element signature="n#!!block;n#SendSuccessResponse#0" />
-            <element signature="n#!!block;n#Testing#0" />
           </folding>
         </state>
       </provider>
@@ -433,13 +403,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/model/Models.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -450,16 +413,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controller/UserController.go">
+    <entry file="file://$PROJECT_DIR$/src/router/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="99" column="39" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="99" selection-end-column="39" />
+        <state relative-caret-position="48">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/UsersRoutes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#20#134#0" expanded="true" />
-            <element signature="n#!!block;n#Index#0" />
-            <element signature="n#!!block;n#Store#0" />
-            <element signature="n#!!block;n#ChangeUserApproveStatus#0" />
-            <element signature="n#!!block;n#TestUser#0" />
+            <element signature="e#16#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/Router.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="15" column="17" lean-forward="true" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+          <folding>
+            <element signature="e#16#65#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -478,27 +454,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/AuthRoutes.go">
+    <entry file="file://$PROJECT_DIR$/src/model/Models.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#16#115#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="552">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/server.go">
+    <entry file="file://$PROJECT_DIR$/src/controller/RoleController.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="360">
+          <caret line="64" column="27" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!block;n#GetRoles#0" />
+            <element signature="n#!!block;n#AddRole#0" />
+            <element signature="n#!!block;n#DeleteRole#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/router/Helper.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="312">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
           <folding>
             <element signature="n#!!block;n#IsAuthenticated#0" />
             <element signature="n#!!block;n#CommonMiddleware#0" />
@@ -507,12 +485,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/router/Router.go">
+    <entry file="file://$PROJECT_DIR$/src/controller/Helper.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+        <state relative-caret-position="596">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
           <folding>
-            <element signature="e#16#65#0" expanded="true" />
+            <element signature="n#!!block;n#SendErrorResponse#0" />
+            <element signature="n#!!block;n#Testing#0" />
+            <element signature="n#!!block;n#IfThenElse#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/AuthRoutes.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="17" column="100" selection-start-line="17" selection-start-column="100" selection-end-line="17" selection-end-column="100" />
+          <folding>
+            <element signature="e#16#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controller/UserController.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="e#20#114#0" expanded="true" />
+            <element signature="n#!!block;n#Store#0" />
+            <element signature="n#!!block;n#ChangeUserApproveStatus#0" />
+            <element signature="e#2524#2529#0" />
+            <element signature="n#!!block;n#Delete#0" />
+            <element signature="n#!!block;n#UserPermissions#0" />
+            <element signature="n#!!block;n#TestUser#0" />
           </folding>
         </state>
       </provider>

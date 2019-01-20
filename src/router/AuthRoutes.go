@@ -15,7 +15,14 @@ func AuthRoutes(r *mux.Router) {
 	r.Handle("/auth-users", IsAuthenticated(controller.GetAllUser)).Methods("GET")
 	r.Handle("/auth-user/{id}", IsAuthenticated(controller.UpdateAuthUser)).Methods("POST")
 	r.Handle("/auth-user/{id}", IsAuthenticated(controller.DeleteAuthUser)).Methods("DELETE")
+	r.Handle("/auth-user-bulk-delete", IsAuthenticated(controller.DeleteBuldAuthUser)).Methods("POST")
+	r.Handle("/auth-users-assign-role/{id}", IsAuthenticated(controller.AssignAuthUserRole)).Methods("POST")
 
+
+	r.Handle("/roles", IsAuthenticated(controller.GetRoles)).Methods("GET")
+	r.Handle("/roles", IsAuthenticated(controller.AddRole)).Methods("POST")
+	r.Handle("/roles/{id}", IsAuthenticated(controller.EditRole)).Methods("PUT")
+	r.Handle("/roles/{id}", IsAuthenticated(controller.DeleteRole)).Methods("DELETE")
 
 	r.HandleFunc("/test", controller.Testing).Methods("GET")
 	r.Handle("/check", IsAuthenticated(CheckHandler))

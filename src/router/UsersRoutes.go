@@ -15,8 +15,4 @@ func UsersRoutes(r *mux.Router) {
 
 	r.Handle("/users/test", IsAuthenticated(controller.TestUser)).Methods("GET")
 
-	r.Handle("/roles", IsAuthenticated(controller.GetRoles)).Methods("GET")
-	r.Handle("/roles", IsAuthenticated(controller.AddRole)).Methods("POST")
-	r.Handle("/roles/{id}", IsAuthenticated(controller.EditRole)).Methods("PUT")
-	r.Handle("/roles/{id}", IsAuthenticated(controller.DeleteRole)).Methods("DELETE")
 }

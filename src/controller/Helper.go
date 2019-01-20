@@ -49,3 +49,11 @@ func Testing(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Matched"))
 
 }
+
+
+func IfThenElse(condition bool, a interface{}, b interface{}) interface{} {
+	if condition {
+		return a
+	}
+	return b
+}

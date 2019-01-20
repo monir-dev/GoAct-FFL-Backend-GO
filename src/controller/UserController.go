@@ -1,26 +1,24 @@
 package controller
 
 import (
-	model "Structure/src/model"
+	"Structure/src/model"
 	"encoding/json"
+	"github.com/gorilla/mux"
 	"net/http"
 	"strings"
-	"time"
-
-	"github.com/gorilla/mux"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
 
-	var users []model.Users
+	var users []model.User
 	DB.Table("users").Scan(&users)
 	json.NewEncoder(w).Encode(users)
 }
 
 func Store(w http.ResponseWriter, r *http.Request) {
 
-	var users model.Users
-	var data interface{}
+	var users model.User
+	//var data interface{}
 	var request map[string]string
 	json.NewDecoder(r.Body).Decode(&request)
 
@@ -31,46 +29,46 @@ func Store(w http.ResponseWriter, r *http.Request) {
 	// Check user already exists
 	DB.Table("users").Where("staff_id = ?", staffId).Find(&users)
 
-	if users.StaffId != "" {
-		response["status"] = "failed"
-		response["msg"] = "Member already exists"
-	} else {
-		url := "http://103.206.184.11:90/auth_server/Project/Controllers/api-v1/staff_operation.php"
-		payload := strings.NewReader("token=staff&staffid=" + staffId)
-		req, _ := http.NewRequest("POST", url, payload)
-		req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-
-		res, _ := http.DefaultClient.Do(req)
-		defer res.Body.Close()
-
-		json.NewDecoder(res.Body).Decode(&data)
-		if data.(map[string]interface{})["isactive"].(bool) == true {
-			record := data.(map[string]interface{})["record"].(map[string]interface{})
-
-			users.Name = record["fullname"].(string)
-			users.Email = record["email"].(string)
-			users.StaffId = staffId
-			users.Displayname = record["displayname"].(string)
-			users.Desg = record["desg"].(string)
-			users.Company = record["company"].(string)
-			users.Dept = record["dept"].(string)
-			users.Country = record["country"].(string)
-			users.Location = record["location"].(string)
-			users.Approved = "0"
-			users.CreatedAt = time.Now().Format("2006-01-02 15:04:05")
-			users.UpdatedAt = time.Now().Format("2006-01-02 15:04:05")
-
-			// insert user to database
-			DB.Create(&users)
-
-			// add user to response to response
-			response["status"] = "success"
-			response["body"] = users
-		} else {
-			response["status"] = "failed"
-			response["msg"] = "No member found"
-		}
-	}
+	//if users.StaffId != "" {
+	//	response["status"] = "failed"
+	//	response["msg"] = "Member already exists"
+	//} else {
+	//	url := "http://103.206.184.11:90/auth_server/Project/Controllers/api-v1/staff_operation.php"
+	//	payload := strings.NewReader("token=staff&staffid=" + staffId)
+	//	req, _ := http.NewRequest("POST", url, payload)
+	//	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	//
+	//	res, _ := http.DefaultClient.Do(req)
+	//	defer res.Body.Close()
+	//
+	//	json.NewDecoder(res.Body).Decode(&data)
+	//	if data.(map[string]interface{})["isactive"].(bool) == true {
+	//		record := data.(map[string]interface{})["record"].(map[string]interface{})
+	//
+	//		users.Name = record["fullname"].(string)
+	//		users.Email = record["email"].(string)
+	//		users.StaffId = staffId
+	//		users.Displayname = record["displayname"].(string)
+	//		users.Desg = record["desg"].(string)
+	//		users.Company = record["company"].(string)
+	//		users.Dept = record["dept"].(string)
+	//		users.Country = record["country"].(string)
+	//		users.Location = record["location"].(string)
+	//		users.Approved = "0"
+	//		users.CreatedAt = time.Now().Format("2006-01-02 15:04:05")
+	//		users.UpdatedAt = time.Now().Format("2006-01-02 15:04:05")
+	//
+	//		// insert user to database
+	//		DB.Create(&users)
+	//
+	//		// add user to response to response
+	//		response["status"] = "success"
+	//		response["body"] = users
+	//	} else {
+	//		response["status"] = "failed"
+	//		response["msg"] = "No member found"
+	//	}
+	//}
 
 	json.NewEncoder(w).Encode(response)
 }
@@ -88,12 +86,46 @@ func ChangeUserApproveStatus(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
+func AssignAuthUserRole(w http.ResponseWriter, r *http.Request)  {
+	id := mux.Vars(r)["id"]
+	var data map[string]string
+	json.NewDecoder(r.Body).Decode(&data)
+
+	//roleId :=  data["role_id"]
+	//if data["role_id"] == "no_role" {
+	//	roleId = "NULL"
+	//}
+
+	DB.Table("users").Where("id = ?", id).Update("role_id", IfThenElse(data["role_id"] == "no_role", nil , data["role_id"]) )
+
+	var response = make(map[string]string, 0)
+	response["status"] = "success"
+	json.NewEncoder(w).Encode(response)
+}
+
+
 func Delete(w http.ResponseWriter, r *http.Request) {
 
 	id := mux.Vars(r)["id"]
-	var users []model.Users
+	var users []model.User
 
 	DB.Table("users").Where("id = ?", id).Delete(&users)
+
+	var response = make(map[string]string, 0)
+	response["status"] = "success"
+	json.NewEncoder(w).Encode(response)
+}
+
+func DeleteBuldAuthUser(w http.ResponseWriter, r *http.Request)  {
+	//var ids map
+	var request map[string]string
+	json.NewDecoder(r.Body).Decode(&request)
+
+	ids := request["ids"]
+	idArray := strings.Split(ids, ",")
+
+	var users []model.User
+	DB.Table("users").Where("id IN (?)", idArray).Delete(&users)
 
 	var response = make(map[string]string, 0)
 	response["status"] = "success"

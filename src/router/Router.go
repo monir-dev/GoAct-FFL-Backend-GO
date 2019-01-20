@@ -12,6 +12,7 @@ func Routes(r *mux.Router) {
 	r.Use(CommonMiddleware)
 
 	// Structure/src/router/AuthRoutes.go
+	// Auth, Roles, Permission
 	AuthRoutes(r)
 
 	// Structure/src/router/UsersRoutes.go
