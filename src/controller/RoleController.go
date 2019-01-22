@@ -4,6 +4,7 @@ import (
 	"Structure/src/model"
 	"encoding/json"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -71,6 +72,21 @@ func DeleteRole(w http.ResponseWriter, r *http.Request) {
 
 	id := mux.Vars(r)["id"]
 	DB.Exec("DELETE FROM roles where id = ?", id)
+
+	var response = make(map[string]string, 0)
+	response["status"] = "success"
+	json.NewEncoder(w).Encode(response)
+}
+
+func DeleteBulkRoles(w http.ResponseWriter, r *http.Request)  {
+	var request map[string]string
+	json.NewDecoder(r.Body).Decode(&request)
+
+	ids := request["ids"]
+	idArray := strings.Split(ids, ",")
+
+	var roles []model.Role
+	DB.Table("roles").Where("id IN (?)", idArray).Delete(&roles)
 
 	var response = make(map[string]string, 0)
 	response["status"] = "success"

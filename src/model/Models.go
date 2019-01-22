@@ -10,10 +10,6 @@ type User struct {
 	UpdatedAt string 	`json:"updated_at"`
 }
 
-// func (User) TableName() string {
-// 	return "users"
-// }
-
 type Role struct {
 	ID          int    `json:"id"`
 	Name        string `json:"name"`
@@ -23,28 +19,19 @@ type Role struct {
 }
 
 type Permission struct {
-	ID          int `json:"id"`
-	Name        string
-	CreatedBy   int
-	CreatedAt   string
-	UpdatedAt   string
+	ID          int 	`json:"id"`
+	Name        string 	`json:"name"`
+	Module		string 	`json:"module"`
+	CreatedAt   string	`json:"created_at"`
+	UpdatedAt   string	`json:"updated_at"`
 }
 
 type PermissionRole struct {
 	PermissionId int `gorm:"column:permission_id"`
 	RoleId       int `gorm:"column:role_id"`
-	Accesses     string
 }
 
 func (PermissionRole) TableName() string {
 	return "permission_role"
 }
 
-type RoleUser struct {
-	RoleId int `gorm:"column:role_id"`
-	UserId int `gorm:"column:user_id"`
-}
-
-func (RoleUser) TableName() string {
-	return "role_user"
-}

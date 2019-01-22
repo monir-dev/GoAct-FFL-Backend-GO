@@ -21,8 +21,12 @@ func AuthRoutes(r *mux.Router) {
 
 	r.Handle("/roles", IsAuthenticated(controller.GetRoles)).Methods("GET")
 	r.Handle("/roles", IsAuthenticated(controller.AddRole)).Methods("POST")
+	r.Handle("/roles-bulk-delete", IsAuthenticated(controller.DeleteBulkRoles)).Methods("POST")
 	r.Handle("/roles/{id}", IsAuthenticated(controller.EditRole)).Methods("PUT")
 	r.Handle("/roles/{id}", IsAuthenticated(controller.DeleteRole)).Methods("DELETE")
+
+	r.Handle("/permissions/{role_id}", IsAuthenticated(controller.GetPermissions)).Methods("GET")
+	r.Handle("/permissions/{role_id}", IsAuthenticated(controller.AssignPermissionsToRole)).Methods("POST")
 
 	r.HandleFunc("/test", controller.Testing).Methods("GET")
 	r.Handle("/check", IsAuthenticated(CheckHandler))
